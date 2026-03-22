@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Invoice Generator | Create Professional Invoices Instantly | Invoicify.io</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Use Invoicify.io's free online invoice maker to create professional, customized freelance invoices in seconds. No sign-up required. Download as PDF or JPG.">
+    <meta name="keywords" content="free invoice generator, invoice maker, create invoice online, freelance invoice template, professional invoice maker, pdf invoice generator, invoicify">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Invoicify.io">
+    <link rel="canonical" href="https://invoicify.io/">
+
+    <!-- Open Graph / Meta Properties -->
+    <meta property="og:title" content="Free Invoice Generator - Invoicify.io">
+    <meta property="og:description" content="Create professional freelance and business invoices instantly. Completely free, no sign-up required. Download as PDF or JPG.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://invoicify.io/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Invoice Generator - Invoicify.io">
+    <meta name="twitter:description" content="Create professional freelance and business invoices instantly.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Invoicify.io - Free Invoice Generator",
+      "url": "https://invoicify.io/",
+      "description": "Free online invoice generator for freelancers and contractors. Create, customize, and download professional invoices as PDF or JPG easily.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Invoicify.io - Free Invoice Generator</h1>
+            <p>Create professional freelancer invoices instantly and download as PDF or JPG</p>
+        </header>
+
+        <main class="app-layout">
+            <div class="left-column">
+                <div class="card invoice-header"
+                    style="background: transparent; border: none; padding: 0; box-shadow: none;">
+                    <div class="form-section">
+                        <h3 class="section-title">Invoice Details</h3>
+                        <div class="input-group full-width" style="margin-bottom: 20px;">
+                            <label>Invoice Title</label>
+                            <input type="text" placeholder="e.g. Web Design Services" class="large-input dark-input"
+                                id="invoice-title">
+                        </div>
+                        <div class="input-group full-width" style="margin-bottom: 0;">
+                            <label style="display: flex; justify-content: space-between; align-items: center;">
+                                Business Logo
+                                <span id="remove-logo-btn"
+                                    style="color: #ef4444; font-size: 0.8rem; cursor: pointer; display: none;">Remove
+                                    Logo &times;</span>
+                            </label>
+                            <input type="file" id="logo-upload" accept="image/*" class="dark-input"
+                                style="padding: 10px; font-size: 0.9rem; cursor: pointer;">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Your Details</h3>
+                        <div class="grid-2" style="margin-bottom: 0;">
+                            <div class="input-group full-width" style="grid-column: 1 / -1; margin-bottom: 0;">
+                                <label>Your Name / Business Name</label>
+                                <input type="text" placeholder="Your Name or Business" id="your-name"
+                                    class="dark-input">
+                            </div>
+                            <div class="input-group full-width" style="grid-column: 1 / -1; margin-bottom: 0;">
+                                <label>Your Address</label>
+                                <input type="text" placeholder="123 Your Street" id="your-address" class="dark-input">
+                            </div>
+                            <div class="input-group">
+                                <label>City & State</label>
+                                <input type="text" placeholder="New York, NY" id="your-city" class="dark-input">
+                            </div>
+                            <div class="input-group">
+                                <label>Country</label>
+                                <input type="text" placeholder="United States" id="your-country" class="dark-input">
+                            </div>
+                            <div class="input-group full-width" style="grid-column: 1 / -1; margin-bottom: 0;">
+                                <label>Your Email</label>
+                                <input type="email" placeholder="you@example.com" id="your-email" class="dark-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Client Details</h3>
+                        <div class="grid-2" style="margin-bottom: 0;">
+                            <div class="input-group full-width" style="grid-column: 1 / -1; margin-bottom: 0;">
+                                <label>Client Name</label>
+                                <input type="text" placeholder="Client Name or Business" id="client-name"
+                                    class="dark-input">
+                            </div>
+                            <div class="input-group full-width" style="grid-column: 1 / -1; margin-bottom: 0;">
+                                <label>Client Address</label>
+                                <input type="text" placeholder="456 Client Street" id="client-address"
+                                    class="dark-input">
+                            </div>
+                            <div class="input-group">
+                                <label>City & State</label>
+                                <input type="text" placeholder="London, LND" id="client-city" class="dark-input">
+                            </div>
+                            <div class="input-group">
+                                <label>Country</label>
+                                <input type="text" placeholder="United Kingdom" id="client-country" class="dark-input">
+                            </div>
+                            <div class="input-group full-width" style="grid-column: 1 / -1; margin-bottom: 0;">
+                                <label>Client Email</label>
+                                <input type="email" placeholder="client@example.com" id="client-email"
+                                    class="dark-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Invoice Meta</h3>
+                        <div class="grid-2" style="margin-bottom: 20px;">
+                            <div class="input-group">
+                                <label>Invoice Number</label>
+                                <input type="text" placeholder="INV-001" id="invoice-number" class="dark-input">
+                            </div>
+                            <div class="input-group">
+                                <label>Currency</label>
+                                <select id="currency-select" class="dark-input"
+                                    style="padding: 14px 18px; appearance: auto; cursor: pointer; color: #ffffff;">
+                                    <option value="USD">USD - US Dollar ($)</option>
+                                    <option value="EUR">EUR - Euro (€)</option>
+                                    <option value="GBP">GBP - British Pound (£)</option>
+                                    <option value="AUD">AUD - Australian Dollar (A$)</option>
+                                    <option value="CAD">CAD - Canadian Dollar (C$)</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan (¥)</option>
+                                    <option value="JPY">JPY - Japanese Yen (¥)</option>
+                                    <option value="INR">INR - Indian Rupee (₹)</option>
+                                    <option value="PKR">PKR - Pakistani Rupee (₨)</option>
+                                    <option value="BDT">BDT - Bangladeshi Taka (৳)</option>
+                                    <option value="LKR">LKR - Sri Lankan Rupee (Rs)</option>
+                                    <option value="NZD">NZD - New Zealand Dollar (NZ$)</option>
+                                    <option value="ZAR">ZAR - South African Rand (R)</option>
+                                    <option value="BRL">BRL - Brazilian Real (R$)</option>
+                                    <option value="SGD">SGD - Singapore Dollar (S$)</option>
+                                    <option value="AED">AED - UAE Dirham</option>
+                                    <option value="MYR">MYR - Malaysian Ringgit (RM)</option>
+                                    <option value="IDR">IDR - Indonesian Rupiah (Rp)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid-2" style="margin-bottom: 0;">
+                            <div class="input-group">
+                                <label>Invoice Date</label>
+                                <input type="date" id="invoice-date" class="dark-input">
+                            </div>
+                            <div class="input-group">
+                                <label>Due Date</label>
+                                <input type="date" id="due-date" class="dark-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card items-section">
+                    <h2>Line Items</h2>
+
+                    <div class="table-header">
+                        <div class="col-desc">Description</div>
+                        <div class="col-qty">Quantity</div>
+                        <div class="col-rate">Rate</div>
+                        <div class="col-amount">Amount</div>
+                        <div class="col-action"></div>
+                    </div>
+
+                    <div id="items-container">
+                    </div>
+
+                    <button class="btn btn-secondary add-item-btn" id="add-item-btn">+ Add Item</button>
+                </div>
+
+                <div class="card summary-section">
+                    <div class="summary-container">
+                        <div class="notes-section">
+                            <label>Bank Name/E-Wallet</label>
+                            <input type="text" placeholder="e.g. Chase Bank" class="dark-input" id="bank-name">
+                            <label style="margin-top: 10px;">Account Number / IBAN</label>
+                            <input type="text" placeholder="e.g. USXX 1234 5678" class="dark-input" id="bank-account">
+                            <label style="margin-top: 10px;">Notes / Additional Terms</label>
+                            <textarea placeholder="e.g. Please pay within 30 days." id="notes"></textarea>
+                        </div>
+
+                        <div class="totals-section">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span id="subtotal">0</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Discount</span>
+                                <input type="text" placeholder="e.g. 10%" class="tax-input dark-input"
+                                    id="discount-rate" style="width: 140px; font-size: 0.95rem; padding: 8px 12px;">
+                            </div>
+                            <div class="total-row">
+                                <span>Tax Details</span>
+                                <input type="text" placeholder="e.g. 10% VAT" class="tax-input dark-input" id="tax-rate"
+                                    style="width: 140px; font-size: 0.95rem; padding: 8px 12px;">
+                            </div>
+                            <div class="total-row grand-total">
+                                <span>Total</span>
+                                <span id="grand-total">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Old action buttons removed per request -->
+            </div>
+
+            <div class="right-column">
+                <div class="card preview-card" id="invoice-preview">
+                    <!-- Invoice Preview Content -->
+                    <div class="preview-header">
+                        <div class="preview-logo-placeholder">
+                            <span>LOGO</span>
+                        </div>
+                        <div class="preview-title-section">
+                            <h2 id="preview-title"
+                                style="font-size: 2.5rem; text-transform: uppercase; color: #ffffff; margin-bottom: 5px; font-weight: 700;">
+                                Invoice</h2>
+                            <p style="color: #9ca3af; font-size: 1rem; font-weight: 500;" id="preview-invoice-number">
+                                INV-001</p>
+                        </div>
+                    </div>
+
+                    <div class="preview-meta-grid">
+                        <div class="preview-business-details">
+                            <h4
+                                style="color: #9ca3af; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">
+                                From</h4>
+                            <div id="preview-from-details"
+                                style="font-size: 0.95rem; color: #d1d5db; line-height: 1.5;">
+                                <p><strong style="color: #ffffff;" id="preview-your-name">Your Name / Business</strong>
+                                </p>
+                                <p id="preview-your-address">Your Address</p>
+                                <p><span id="preview-your-city">City, State</span> &bull; <span
+                                        id="preview-your-country">Country</span></p>
+                                <p id="preview-your-email">you@example.com</p>
+                            </div>
+                        </div>
+
+                        <div class="preview-client-details">
+                            <h4
+                                style="color: #9ca3af; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">
+                                Billed To</h4>
+                            <div id="preview-to-details" style="font-size: 0.95rem; color: #d1d5db; line-height: 1.5;">
+                                <p><strong style="color: #ffffff;" id="preview-client-name">Client Name</strong></p>
+                                <p id="preview-client-address">Client Address</p>
+                                <p><span id="preview-client-city">City, State</span> &bull; <span
+                                        id="preview-client-country">Country</span></p>
+                                <p id="preview-client-email">client@example.com</p>
+                            </div>
+                        </div>
+
+                        <div class="preview-dates" style="text-align: right;">
+                            <div style="margin-bottom: 16px;">
+                                <h4
+                                    style="color: #9ca3af; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 4px; font-weight: 600;">
+                                    Issued Date</h4>
+                                <p id="preview-date" style="font-size: 0.95rem; color: #ffffff; font-weight: 500;">Oct
+                                    24, 2023</p>
+                            </div>
+                            <div>
+                                <h4
+                                    style="color: #9ca3af; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 4px; font-weight: 600;">
+                                    Due Date</h4>
+                                <p id="preview-due-date" style="font-size: 0.95rem; color: #ffffff; font-weight: 500;">
+                                    Nov 24, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview-service-table" style="display: flex; flex-direction: column; width: 100%;">
+                        <div class="preview-table-header"
+                            style="justify-content: space-between; align-items: center; gap: 20px; width: 100%;">
+                            <div style="flex: 3; text-align: left;">Description</div>
+                            <div style="flex: 1; text-align: center;">Qty</div>
+                            <div style="flex: 1; text-align: right;">Rate</div>
+                            <div style="flex: 1; text-align: right;">Amount</div>
+                        </div>
+                        <!-- Live Items Wrapper -->
+                        <div id="preview-items-container" style="width: 100%; display: flex; flex-direction: column;">
+                            <!-- Example Item -->
+                            <div
+                                style="display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid #333333; font-size: 0.95rem; color: #d1d5db; align-items: center; gap: 20px; width: 100%;">
+                                <div style="flex: 3; font-weight: 500; text-align: left; color: #ffffff;">Web Design
+                                    Services</div>
+                                <div style="flex: 1; text-align: center;">1</div>
+                                <div style="flex: 1; text-align: right;">0</div>
+                                <div style="flex: 1; text-align: right; font-weight: 600; color: #ffffff;">0</div>
+                            </div>
+                        </div>
+
+                        <div class="preview-totals-section">
+                            <div style="width: 320px;">
+                                <div
+                                    style="display: flex; justify-content: space-between; padding: 12px 0; color: #9ca3af; font-size: 0.95rem;">
+                                    <span>Subtotal</span>
+                                    <span id="preview-subtotal" style="color: #d1d5db; font-weight: 500;">0</span>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; padding: 12px 0; color: #9ca3af; font-size: 0.95rem;">
+                                    <span>Discount <span id="preview-discount-percent"></span></span>
+                                    <span id="preview-discount" style="color: #d1d5db; font-weight: 500;">0</span>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; padding: 12px 0; color: #9ca3af; font-size: 0.95rem; border-bottom: 2px solid #4b5563;">
+                                    <span>Tax <span id="preview-tax-percent"></span></span>
+                                    <span id="preview-tax" style="color: #d1d5db; font-weight: 500;">0</span>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; padding: 20px 0 0 0; align-items: center;">
+                                    <span style="font-weight: 600; color: #ffffff; font-size: 1.1rem;">Total
+                                        Amount</span>
+                                    <span id="preview-grand-total"
+                                        style="font-weight: 700; font-size: 1.5rem; color: var(--accent);">0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-payment-details"
+                            style="display: flex; justify-content: space-between; gap: 40px;">
+                            <div style="flex: 1;">
+                                <h4
+                                    style="color: #9ca3af; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">
+                                    Payment Method</h4>
+                                <div style="font-size: 0.95rem; color: #d1d5db; line-height: 1.6;">
+                                    <p><strong style="color: #9ca3af; font-weight: 600;">Bank:</strong> <span
+                                            id="preview-bank">0</span></p>
+                                    <p><strong style="color: #9ca3af; font-weight: 600;">Account:</strong> <span
+                                            id="preview-account">0</span></p>
+                                </div>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4
+                                    style="color: #9ca3af; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">
+                                    Notes</h4>
+                                <p id="preview-notes"
+                                    style="font-size: 0.95rem; color: #9ca3af; line-height: 1.6; white-space: pre-wrap;">
+                                    0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="download-section"
+                        style="margin-top: 24px; text-align: right; display: flex; flex-direction: column; gap: 16px;">
+                        <button class="btn btn-primary" id="download-jpg-btn"
+                            style="width: 100%; border-radius: 12px; font-size: 1.15rem; padding: 18px 24px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Invoice (JPG)
+                        </button>
+                        <button class="btn btn-primary" id="download-pdf-btn"
+                            style="width: 100%; border-radius: 12px; font-size: 1.15rem; padding: 18px 24px; display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #3b82f6;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            Download Invoice (PDF)
+                        </button>
+                    </div>
+                </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
