@@ -1,70 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Privacy Policy - Invoicify</title>
+<title>Privacy Policy</title>
 
-<link rel="icon" href="/favicon.png">
+<link rel="stylesheet" href="style.css">
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#000000;
+background:#0b0b0b;
 color:white;
+font-family:Arial;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:#000000;
-}
-
-.logo{
-font-size:20px;
-font-weight:bold;
-}
-
-.nav-buttons a{
-text-decoration:none;
-padding:10px 18px;
-border-radius:6px;
-background:#2563eb;
-color:white;
-margin-left:10px;
-}
-
-.nav-buttons a:hover{
-background:#1d4ed8;
-}
-
-.container{
+.policy-container{
 max-width:900px;
 margin:auto;
 padding:60px 20px;
-line-height:1.7;
 }
 
-h1{
-color:#38bdf8;
+.policy-title{
+font-size:36px;
+color:#4da3ff;
+margin-bottom:30px;
 }
 
-footer{
-text-align:center;
-padding:30px;
-margin-top:60px;
-border-top:1px solid #334155;
-}
-
-footer a{
-color:#38bdf8;
-margin:0 10px;
-text-decoration:none;
+.policy-section{
+background:#111;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
 }
 
 </style>
@@ -73,51 +43,66 @@ text-decoration:none;
 
 <body>
 
-<header>
+<header class="navbar">
 
 <div class="logo">Invoicify</div>
 
-<div class="nav-buttons">
-<a href="/">Home</a>
-<a href="/about.html">About</a>
-<a href="/privacy-policy.html">Privacy</a>
-</div>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="privacy-policy.html">Privacy</a>
+</nav>
 
 </header>
 
-<div class="container">
+<div class="policy-container">
 
-<h1>Privacy Policy</h1>
+<h1 class="policy-title">Privacy Policy</h1>
 
-<p>Your privacy is important to us. Invoicify does not store personal invoice data on servers.</p>
+<div class="policy-section">
 
 <h2>Information Collection</h2>
 
-<p>All invoice data entered on this website stays in your browser and is not stored by us.</p>
-
-<h2>Cookies</h2>
-
-<p>We may use cookies and third-party advertising networks like Adsterra to show ads.</p>
-
-<h2>External Links</h2>
-
-<p>Our website may contain links to other websites. We are not responsible for their privacy practices.</p>
-
-<h2>Policy Updates</h2>
-
-<p>This policy may be updated occasionally.</p>
+<p>
+All invoice data entered on this website stays in your browser
+and is not stored on our servers.
+</p>
 
 </div>
 
-<footer>
+<div class="policy-section">
 
-<a href="/">Home</a>
-<a href="/about.html">About</a>
-<a href="/privacy-policy.html">Privacy Policy</a>
+<h2>Cookies</h2>
 
-<p>© 2026 Invoicify</p>
+<p>
+We may use cookies and third-party advertising networks
+like Adsterra to display ads.
+</p>
 
-</footer>
+</div>
+
+<div class="policy-section">
+
+<h2>External Links</h2>
+
+<p>
+Our website may contain links to external websites.
+We are not responsible for their privacy practices.
+</p>
+
+</div>
+
+<div class="policy-section">
+
+<h2>Policy Updates</h2>
+
+<p>
+This policy may be updated occasionally.
+</p>
+
+</div>
+
+</div>
 
 </body>
 </html>
