@@ -1,70 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Invoicify</title>
 
-<title>About - Invoicify</title>
-
-<link rel="icon" href="/favicon.png">
+<link rel="stylesheet" href="style.css">
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#000000;
+background:#0b0b0b;
 color:white;
+font-family:Arial;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:#000000;
-}
-
-.logo{
-font-size:20px;
-font-weight:bold;
-}
-
-.nav-buttons a{
-text-decoration:none;
-padding:10px 18px;
-border-radius:6px;
-background:#2563eb;
-color:white;
-margin-left:10px;
-}
-
-.nav-buttons a:hover{
-background:#1d4ed8;
-}
-
-.container{
+.about-container{
 max-width:900px;
 margin:auto;
 padding:60px 20px;
-line-height:1.7;
 }
 
-h1{
-color:#38bdf8;
+.about-title{
+font-size:36px;
+color:#4da3ff;
+margin-bottom:20px;
 }
 
-footer{
-text-align:center;
-padding:30px;
-margin-top:60px;
-border-top:1px solid #334155;
+.feature-box{
+background:#111;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
 }
 
-footer a{
-color:#38bdf8;
-margin:0 10px;
-text-decoration:none;
+.feature-box ul{
+line-height:2;
 }
 
 </style>
@@ -73,25 +45,33 @@ text-decoration:none;
 
 <body>
 
-<header>
+<header class="navbar">
 
 <div class="logo">Invoicify</div>
 
-<div class="nav-buttons">
-<a href="/">Home</a>
-<a href="/about.html">About</a>
-<a href="/privacy-policy.html">Privacy</a>
-</div>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="privacy-policy.html">Privacy</a>
+</nav>
 
 </header>
 
-<div class="container">
+<div class="about-container">
 
-<h1>About Invoicify</h1>
+<h1 class="about-title">About Invoicify</h1>
 
-<p>Invoicify is a free online invoice generator designed for freelancers, small businesses, and startups.</p>
+<p>
+Invoicify is a free online invoice generator designed for freelancers,
+small businesses, and startups.
+</p>
 
-<p>Our goal is to make invoicing fast, simple, and accessible without complicated accounting software.</p>
+<p>
+Our goal is to make invoicing simple, fast, and professional without
+complicated accounting software.
+</p>
+
+<div class="feature-box">
 
 <h2>Features</h2>
 
@@ -101,21 +81,12 @@ text-decoration:none;
 <li>Upload your business logo</li>
 <li>Download invoices as JPG or PDF</li>
 <li>Live calculations</li>
-</ul>
 
-<p>Everything works directly in your browser without registration.</p>
+</ul>
 
 </div>
 
-<footer>
-
-<a href="/">Home</a>
-<a href="/about.html">About</a>
-<a href="/privacy-policy.html">Privacy Policy</a>
-
-<p>© 2026 Invoicify</p>
-
-</footer>
+</div>
 
 </body>
 </html>
