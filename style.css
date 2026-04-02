@@ -769,3 +769,16 @@ background:#1e90ff;
         transform: translateY(-200px);
     }
 }
+
+.animated-bg {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+
+background: linear-gradient(-45deg, #0f0f0f, #0b132b, #1c2541, #020617);
+background-size: 400% 400%;
+animation: gradientBG 12s ease infinite;
+}
