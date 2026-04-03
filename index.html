@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://your-vercel-link/" />
@@ -23,7 +24,7 @@
 </head>
 
 <body>
-   
+   <div id="particles-bg"></div>
     <div class="container">
         <header>
             <h1 class="title">Invoicify.io</h1>
@@ -418,7 +419,17 @@
 <p>© 2026 Invoicify - Free Invoice Generator</p>
 
 </footer>
+    <script>
+particlesJS("particles-bg",{
+particles:{
+number:{value:80},
+color:{value:"#00aaff"},
+shape:{type:"circle"},
+size:{value:3},
+move:{enable:true,speed:2}
+}
+});
+</script>
 </body>
-<div class="particles"></div>
-    <div class="animated-bg"></div>
+
 </html>
